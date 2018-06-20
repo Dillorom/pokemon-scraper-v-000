@@ -8,6 +8,7 @@ class Pokemon
   end
 
   def self.save(name, type, db)
+    atabase_connection = SQLite3::Database.new('db/pokemon.db')
     database_connection.execute("INSERT INTO pokemon(id:, name:, type:, db:) VALUES(?, ?, ?, ?, ?)")
   end
 end
