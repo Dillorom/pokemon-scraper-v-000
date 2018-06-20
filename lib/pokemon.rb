@@ -21,8 +21,7 @@ class Pokemon
   end
 
   def self.find(id, db)
-    Pokemon.all.each do |pokemon|
-      Pokemon.save(Pokemon.name, Pokemon.type, db)
-    end
+    selected_pokemon = db.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", id)
+      Pokemon.new(id: selected_pokemon[0], name: selected_pokemon[1], type: selected_pokemon[2], db)
   end
 end
