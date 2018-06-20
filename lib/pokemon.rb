@@ -20,7 +20,7 @@ class Pokemon
     @@all
   end
 
-  def self.find(id)
+  def self.find(id, db)
     Pokemon.all.each do |pokemon|
       Pokemon.save(Pokemon.id, Pokemon.name, Pokemon.type, db)
     end
