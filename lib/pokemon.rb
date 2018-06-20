@@ -22,7 +22,7 @@ class Pokemon
 
   def self.find(name, type)
     Pokemon.all.each do |pokemon|
-      Pokemon.save(Pokemon.name, Pokemon.id)
+      Pokemon.save(Pokemon.name)
     end
   end
 end
